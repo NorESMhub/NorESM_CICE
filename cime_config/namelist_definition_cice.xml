@@ -555,7 +555,7 @@
       <value hgrid="tnx1v4">$DIN_LOC_ROOT/ocn/blom/grid/horiz_grid_tnx1v4_20170622.ieeer8</value>
       <value hgrid="tnx0.5v1">$DIN_LOC_ROOT/ocn/blom/grid/horiz_grid_tnx0.5v1_20240702.ieeei8</value>
       <value hgrid="tnx0.25v4">$DIN_LOC_ROOT/ocn/blom/grid/horiz_grid_tnx0.25v4_20170622.ieeer8</value>
-      <value hgrid="tnx0.125v4">$DIN_LOC_ROOT/ocn/blom/grid/horiz_grid_tnx0.125v4_20200722.ieeer8</value>
+      <value hgrid="tnx0.125v4">$DIN_LOC_ROOT/ocn/blom/grid/horiz_grid_tnx0.125v4_20221013.ieeer8</value>
       <value hgrid="ar9v4">$DIN_LOC_ROOT/ice/cice/ar9v3_20101118.grid</value>
       <value hgrid="ar9v3">$DIN_LOC_ROOT/ice/cice/ar9v3_20101118.grid</value>
       <value hgrid="us20">$DIN_LOC_ROOT/ice/cice/domain.ocn.us20.20110426.nc</value>
@@ -584,7 +584,7 @@
       <value hgrid="tnx1v4">$DIN_LOC_ROOT/ocn/blom/grid/topography_tnx1v4_20170622.ieeei4</value>
       <value hgrid="tnx0.5v1">$DIN_LOC_ROOT/ocn/blom/grid/topography_tnx0.5v1_20240702.ieeei4</value>
       <value hgrid="tnx0.25v4">$DIN_LOC_ROOT/ocn/blom/grid/topography_tnx0.25v4_20170622.ieeei4</value>
-      <value hgrid="tnx0.125v4">$DIN_LOC_ROOT/ocn/blom/grid/topography_tnx0.125v4_20200722.ieeei4</value>
+      <value hgrid="tnx0.125v4">$DIN_LOC_ROOT/ocn/blom/grid/topography_tnx0.125v4_20221013.ieeei4</value>
       <value hgrid="ar9v3">$DIN_LOC_ROOT/ocn/pop/ar9v3/grid/kmt.ar9v3.ocn.ChanBarrier.20100622.ieeei4</value>
       <value hgrid="ar9v4">$DIN_LOC_ROOT/ice/cice/ar9v3_20110106.kmt</value>
       <value hgrid="us20">$DIN_LOC_ROOT/ice/cice/domain.ocn.us20.20110426.nc</value>
