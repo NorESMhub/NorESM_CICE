@@ -178,7 +178,11 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
     if not "max_blocks" in user_nl:
         nmlgen.set_value('max_blocks', value=cice_mxblcks)
     if not "distribution_type" in user_nl:
-        nmlgen.set_value('distribution_type', value=cice_decomptype)
+        if 'tnx1' in hgrid:
+            print ("  RESETTING distribution_type to sectrobin ")
+            nmlgen.set_value('distribution_type', value='sectrobin')
+        else:
+            nmlgen.set_value('distribution_type', value=cice_decomptype)
     if not "processor_shape" in user_nl:
         nmlgen.set_value('processor_shape', value=cice_decompsetting)
 
@@ -245,7 +249,7 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
         cice_ptr = cice_ptr.replace("_0001", inst_string)
         if os.path.exists(os.path.join(rundir, cice_ptr)):
             nmlgen.set_value('pointer_file', cice_ptr)
-            
+
     #----------------------------------------------------
     # Write out namelist groups
     #----------------------------------------------------
