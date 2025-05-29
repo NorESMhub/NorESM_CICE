@@ -207,7 +207,7 @@
       <option name="comment">restart test; 0.5 degree; hybrid coordinates; JRA forcing</option>
     </options>
   </test>
-  <test name="ERI" grid="TL319_tn14" compset="NOIIAJRAOC">
+  <test name="ERI" grid="TL319_tn14" compset="NOIIAJRA">
     <machines>
       <machine name="betzy" compiler="intel" category="aux_cice_noresm"/>
     </machines>
