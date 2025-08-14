@@ -2172,7 +2172,7 @@
     </desc>
     <valid_values>none,bulk,ITDrdg</valid_values>
     <values>
-      <value>bulk</value>
+      <value>none</value>
     </values>
   </entry>
 
