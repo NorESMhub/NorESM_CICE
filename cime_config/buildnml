@@ -225,7 +225,7 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
 
     # error checks for prescribed ice mode
     if cice_mode == 'prescribed':
-        sstice_grid_filename = case.get_value('SSTICE_GRID_FILENAME')
+        sstice_grid_filename = case.get_value('SSTICE_MESH_FILENAME')
         sstice_data_filename = case.get_value('SSTICE_DATA_FILENAME')
         sstice_year_align = case.get_value('SSTICE_YEAR_ALIGN')
         sstice_year_start = case.get_value('SSTICE_YEAR_START')
@@ -247,8 +247,19 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
     if drv_ptr:
         cice_ptr = drv_ptr.replace("cpl","ice")
         cice_ptr = cice_ptr.replace("_0001", inst_string)
-        if os.path.exists(os.path.join(rundir, cice_ptr)):
-            nmlgen.set_value('pointer_file', cice_ptr)
+    else:
+        # find the most recent file matching pattern
+        cice_ptr = None
+        pattern = "rpointer.ice*"
+        os.chdir(rundir)
+        files = glob.glob(pattern)
+        files.sort(key=lambda x: os.path.getmtime(os.path.join(rundir,x)))
+        os.chdir(case.get_case_root())
+        if files:
+            cice_ptr = files[-1]
+
+    if cice_ptr and os.path.exists(os.path.join(rundir, cice_ptr)):
+        nmlgen.set_value('pointer_file', cice_ptr)
 
     #----------------------------------------------------
     # Write out namelist groups
