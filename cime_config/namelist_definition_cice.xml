@@ -563,6 +563,20 @@
     </values>
   </entry>
 
+  <entry id="kmt_type">
+    <type>char</type>
+    <category>grid</category>
+    <group>grid_nml</group>
+    <desc>
+      type of grid
+    </desc>
+    <valid_values>none,file</valid_values>
+    <values>
+      <value>file</value>
+      <value cice_mode="prescribed">none</value>
+    </values>
+  </entry>
+
   <entry id="kmt_file">
     <type>char</type>
     <category>grid</category>
@@ -1472,6 +1486,18 @@
     </values>
   </entry>
 
+  <entry id="floediam">
+    <type>real</type>
+    <category>parameterizations</category>
+    <group>thermo_nml</group>
+    <desc>
+      Floe diameter used in lateral melting
+    </desc>
+    <values>
+      <value>300.0</value> 
+    </values>
+  </entry>
+  
   <!-- =========================== -->
   <!-- dynamics_nml parameterizations -->
   <!-- =========================== -->
@@ -1818,9 +1844,9 @@
     <category>swrad</category>
     <group>shortwave_nml</group>
     <desc>
-      shortwave method, 'default' ('ccsm3') 'dEdd' or 'dEdd_ad'
+      shortwave method, 'default' ('ccsm3') 'dEdd' or 'dEdd_snicar_ad'
     </desc>
-    <valid_values>default,dEdd,dEdd_ad</valid_values>
+    <valid_values>default,dEdd,dEdd_snicar_ad</valid_values>
     <values>
       <value>dEdd</value>
     </values>
@@ -2212,6 +2238,45 @@
     </values>
   </entry>
 
+
+  <entry id="drsnw_min">
+    <type>real</type>
+    <category>parameterizations</category>
+    <group>snow_nml</group>
+    <desc>
+      Scaling of minimum dry snow growth rate (unitless)
+    </desc>
+    <values>
+      <value> 0.0 </value>
+    </values>
+  </entry>
+
+  <entry id="snw_growth_wet">
+    <type>real</type>
+    <category>parameterizations</category>
+    <group>snow_nml</group>
+    <desc>
+      wet metamorphism parameter (um^3/s)  1.e18 * 4.22e-13 (Oleson 2010)
+    </desc>
+    <values>
+      <value> 4.22e+5 </value>
+    </values>
+  </entry>
+
+
+  <entry id="snwliq_max">
+    <type>real</type>
+    <category>parameterizations</category>
+    <group>snow_nml</group>
+    <desc>
+      Irreducible saturation fraction for snow (0.033, Anderson 1976; 0.09-0.1 Denoth et al, 1979 and Brun 1989)
+    </desc>
+    <values>
+      <value> 0.033 </value>
+    </values>
+  </entry>
+
+  
   <entry id="rsnw_tmax">
     <type>real</type>
     <category>parameterizations</category>
@@ -3754,7 +3819,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -3767,7 +3832,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -3780,7 +3845,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -3976,7 +4041,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4072,7 +4137,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4100,7 +4165,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4128,7 +4193,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4155,7 +4220,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -4869,7 +4934,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -4895,13 +4960,13 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
   </entry>
 
-  <entry id="f_flpnd">
+  <entry id="f_dpnd_flush">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
@@ -4914,7 +4979,7 @@
     </values>
   </entry>
 
-  <entry id="f_expnd">
+  <entry id="f_dpnd_expon">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
@@ -4927,7 +4992,7 @@
     </values>
   </entry>
 
-  <entry id="f_frpnd">
+  <entry id="f_dpnd_freebd">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
@@ -4940,7 +5005,7 @@
     </values>
   </entry>
 
-  <entry id="f_rfpnd">
+  <entry id="f_dpnd_initial">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
@@ -4953,7 +5018,7 @@
     </values>
   </entry>
 
-  <entry id="f_ilpnd">
+  <entry id="f_dpnd_dlid">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
@@ -4966,7 +5031,20 @@
     </values>
   </entry>
 
-  <entry id="f_mipnd">
+  <entry id="f_dpnd_melt">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_ridge">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
@@ -4979,79 +5057,66 @@
     </values>
   </entry>
 
-  <entry id="f_rdpnd">
+  <entry id="f_dpnd_flushn">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>xxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
   </entry>
 
-  <entry id="f_flpndn">
+  <entry id="f_dpnd_exponn">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>xxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
   </entry>
 
-  <entry id="f_expndn">
+  <entry id="f_dpnd_freebdn">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>xxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
   </entry>
 
-  <entry id="f_frpndn">
+  <entry id="f_dpnd_initialn">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>xxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
   </entry>
 
-  <entry id="f_rfpndn">
+  <entry id="f_dpnd_dlidn">
     <type>char</type>
     <category>history</category>
     <group>icefields_pond_nml</group>
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_ilpndn">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>mxxxx</value>
+      <value>xxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5124,7 +5189,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -5138,7 +5203,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5151,7 +5216,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5164,7 +5229,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5177,7 +5242,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5190,7 +5255,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5203,7 +5268,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5216,7 +5281,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5233,7 +5298,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5246,7 +5311,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5259,7 +5324,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5272,7 +5337,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
