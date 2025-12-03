@@ -271,7 +271,7 @@
       frequency of history output (once per 1,h,d,m,y)
     </desc>
     <values>
-      <value>m,x,x,x,x</value>
+      <value>m,d,x,x,x</value>
       <value hgrid="ar9v3">m,d,h,x,x</value>
       <value hgrid="ar9v4">m,d,h,x,x</value>
       <value cice_mode="prescribed">m,x,x,x,x</value>
@@ -286,7 +286,7 @@
       frequency of history output (10 = once per 10 h,d,m,y)
     </desc>
     <values>
-      <value>1,0,0,0,0</value>
+      <value>1,1,0,0,0</value>
     </values>
   </entry>
 
@@ -560,6 +560,20 @@
       <value hgrid="ar9v3">$DIN_LOC_ROOT/ice/cice/ar9v3_20101118.grid</value>
       <value hgrid="ar9v4">$DIN_LOC_ROOT/ice/cice/ar9v3_20101118.grid</value>
       <value hgrid="us20">$DIN_LOC_ROOT/ice/cice/domain.ocn.us20.20110426.nc</value>
+    </values>
+  </entry>
+
+  <entry id="kmt_type">
+    <type>char</type>
+    <category>grid</category>
+    <group>grid_nml</group>
+    <desc>
+      type of grid
+    </desc>
+    <valid_values>none,file</valid_values>
+    <values>
+      <value>file</value>
+      <value cice_mode="prescribed">none</value>
     </values>
   </entry>
 
@@ -1444,7 +1458,7 @@
       solid fraction at lower boundary between 0 and 1
     </desc>
     <values>
-      <value>0.85</value>
+      <value>0.45</value>
     </values>
   </entry>
 
@@ -1468,7 +1482,7 @@
       Minimum ice thickness allowed
     </desc>
     <values>
-      <value>0.01</value> 
+      <value>0.01</value>
     </values>
   </entry>
 
@@ -2039,7 +2053,7 @@
     </values>
   </entry>
 
-  
+
   <!-- =========================== -->
   <!-- ponds_nml -->
   <!-- =========================== -->
@@ -2115,7 +2129,7 @@
       minimum melt water added to ponds
     </desc>
     <values>
-      <value> 0.15 </value>
+      <value>1.0</value>
       <value hgrid="ar9v3"> 0.15 </value>
       <value hgrid="ar9v4"> 0.15 </value>
     </values>
@@ -2129,7 +2143,7 @@
       maximum melt water added to ponds
     </desc>
     <values>
-      <value> 0.85 </value>
+      <value>1.0</value>
       <value hgrid="ar9v3"> 1.00 </value>
       <value hgrid="ar9v4"> 1.00 </value>
     </values>
@@ -2172,7 +2186,7 @@
     </desc>
     <valid_values>none,bulk,ITDrdg</valid_values>
     <values>
-      <value>none</value>
+      <value>snwITDrdg</value>
     </values>
   </entry>
 
@@ -2474,7 +2488,7 @@
       minimum value of ocean friction velocity
     </desc>
     <values>
-      <value>0.005</value> 
+      <value>0.005</value>
     </values>
   </entry>
 
@@ -2548,14 +2562,14 @@
     <group>forcing_nml</group>
     <desc>
       Explicit calculation of ice-ocean drag based on the upper ocean
-      layer thickness 
+      layer thickness
     </desc>
     <values>
       <value>.false</value>
     </values>
   </entry>
 
-  
+
   <entry id="emissivity">
     <type>real</type>
     <category>forcing</category>
@@ -3320,7 +3334,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mnxxx</value>
     </values>
   </entry>
 
@@ -3976,7 +3990,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4058,7 +4072,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4086,7 +4100,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4556,7 +4570,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4764,7 +4778,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -4778,7 +4792,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -4791,7 +4805,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -4804,7 +4818,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -4895,7 +4909,163 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_flush">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_expon">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_freebd">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_initial">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_dlid">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_melt">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_ridge">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_flushn">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_exponn">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_freebdn">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_initialn">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
+      <value hgrid="ar9v4">mdhxx</value>
+      <value cice_mode='prescribed'>xxxxx</value>
+    </values>
+  </entry>
+
+  <entry id="f_dpnd_dlidn">
+    <type>char</type>
+    <category>history</category>
+    <group>icefields_pond_nml</group>
+    <desc>
+    </desc>
+    <values>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5124,7 +5294,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mdxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
       <value hgrid="ar9v3">mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
@@ -5138,7 +5308,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5151,7 +5321,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5164,7 +5334,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5177,7 +5347,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5190,7 +5360,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5203,7 +5373,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
@@ -5216,7 +5386,7 @@
     <desc>
     </desc>
     <values>
-      <value>mxxxx</value>
+      <value>mdxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
