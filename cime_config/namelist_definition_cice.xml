@@ -1109,7 +1109,9 @@
       Ice age restart from file.
     </desc>
     <values>
-      <value>.true.</value>
+      <value>.false.</value>
+      <value run_type="branch">.true.</value>
+      <value run_type="hybrid">.true.</value>
     </values>
   </entry>
 
@@ -1136,7 +1138,9 @@
       FY area restart from file.
     </desc>
     <values>
-      <value>.true.</value>
+      <value>.false.</value>
+      <value run_type="branch">.true.</value>
+      <value run_type="hybrid">.true.</value>
     </values>
   </entry>
 
@@ -1163,7 +1167,10 @@
       lvl restart from file.
     </desc>
     <values>
-      <value>.true.</value>
+      <value>.false.</value>
+      <value run_type="branch">.true.</value>
+      <value run_type="hybrid">.true.</value>
+      
     </values>
   </entry>
 
@@ -1240,7 +1247,9 @@
       Sea level pond restart from file.
     </desc>
     <values>
-      <value>.true.</value>
+      <value>.false.</value>
+      <value run_type="branch">.true.</value>
+      <value run_type="hybrid">.true.</value>
     </values>
   </entry>
 
@@ -1264,7 +1273,9 @@
       Aerosol restart from file.
     </desc>
     <values>
-      <value>.true.</value>
+      <value>.false.</value>
+      <value run_type="branch">.true.</value>
+      <value run_type="hybrid">.true.</value>
     </values>
   </entry>
 
@@ -1336,7 +1347,9 @@
       snow restart from file
     </desc>
     <values>
-      <value>.true.</value>
+      <value>.false.</value>
+      <value run_type="branch">.true.</value>
+      <value run_type="hybrid">.true.</value>
     </values>
   </entry>
 

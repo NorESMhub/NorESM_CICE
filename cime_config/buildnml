@@ -56,6 +56,9 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
     config['hgrid'] = hgrid
     config['cice_mode'] = cice_mode
 
+    run_type = case.get_value("RUN_TYPE")
+    config['run_type'] = run_type
+
     cice_config_opts = case.get_value('CICE_CONFIG_OPTS')
     if "cice5" in cice_config_opts:
         phys = "cice5"
