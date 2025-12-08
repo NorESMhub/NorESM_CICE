@@ -1110,7 +1110,6 @@
     </desc>
     <values>
       <value>.false.</value>
-      <value run_type="branch">.true.</value>
       <value run_type="hybrid">.true.</value>
     </values>
   </entry>
@@ -1139,7 +1138,6 @@
     </desc>
     <values>
       <value>.false.</value>
-      <value run_type="branch">.true.</value>
       <value run_type="hybrid">.true.</value>
     </values>
   </entry>
@@ -1168,7 +1166,6 @@
     </desc>
     <values>
       <value>.false.</value>
-      <value run_type="branch">.true.</value>
       <value run_type="hybrid">.true.</value>
       
     </values>
@@ -1248,7 +1245,6 @@
     </desc>
     <values>
       <value>.false.</value>
-      <value run_type="branch">.true.</value>
       <value run_type="hybrid">.true.</value>
     </values>
   </entry>
@@ -1274,7 +1270,6 @@
     </desc>
     <values>
       <value>.false.</value>
-      <value run_type="branch">.true.</value>
       <value run_type="hybrid">.true.</value>
     </values>
   </entry>
@@ -1348,7 +1343,6 @@
     </desc>
     <values>
       <value>.false.</value>
-      <value run_type="branch">.true.</value>
       <value run_type="hybrid">.true.</value>
     </values>
   </entry>
