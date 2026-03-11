@@ -1504,6 +1504,19 @@
       <value>300.0</value> 
     </values>
   </entry>
+
+  <entry id="ksno">
+    <type>real</type>
+    <category>parameterizations</category>
+    <group>thermo_nml</group>
+    <desc>
+      Heat conductivity of snow on ice
+    </desc>
+    <values>
+      <value>0.30</value> 
+    </values>
+  </entry>
+
   
   <!-- =========================== -->
   <!-- dynamics_nml parameterizations -->
