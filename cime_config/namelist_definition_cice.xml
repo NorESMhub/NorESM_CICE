@@ -1866,9 +1866,9 @@
     <category>swrad</category>
     <group>shortwave_nml</group>
     <desc>
-      shortwave method, 'default' ('ccsm3') 'dEdd' or 'dEdd_snicar_ad'
+      shortwave method, 'default' ('ccsm3') or 'dEdd'
     </desc>
-    <valid_values>default,dEdd,dEdd_snicar_ad</valid_values>
+    <valid_values>default,dEdd</valid_values>
     <values>
       <value>dEdd</value>
     </values>
@@ -2074,20 +2074,6 @@
     </values>
   </entry>
 
-  <entry id="snw_ssp_table">
-    <type>char</type>
-    <category>parameterizations</category>
-    <group>shortwave_nml</group>
-    <desc>
-      snow radiative properties (only used with dEdd_ad)
-    </desc>
-    <valid_values>test,snicar</valid_values>
-    <values>
-      <value>test</value>
-    </values>
-  </entry>
-
-  
   <!-- =========================== -->
   <!-- ponds_nml -->
   <!-- =========================== -->
@@ -2218,7 +2204,7 @@
     <desc>
       snow redistribution
     </desc>
-    <valid_values>none,bulk,ITDrdg</valid_values>
+    <valid_values>none,bulk,snwITDrdg</valid_values>
     <values>
       <value>snwITDrdg</value>
     </values>
@@ -2628,21 +2614,6 @@
   <!--   </values> -->
   <!-- </entry> -->
 
-
-  <entry id="calc_dragio">
-    <type>logical</type>
-    <category>forcing</category>
-    <group>forcing_nml</group>
-    <desc>
-      Explicit calculation of ice-ocean drag based on the upper ocean
-      layer thickness 
-    </desc>
-    <values>
-      <value>.false</value>
-    </values>
-  </entry>
-
-  
   <entry id="emissivity">
     <type>real</type>
     <category>forcing</category>
@@ -6054,149 +6025,6 @@
     </desc>
     <values>
       <value>mdxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_expon">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>mxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_freebd">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>mxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_initial">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>mxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_dlid">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>mxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_melt">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>mdxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_ridge">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>mxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_flushn">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>xxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_exponn">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>xxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_freebdn">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>xxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_initialn">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>xxxxx</value>
-      <value hgrid="ar9v4">mdhxx</value>
-      <value cice_mode='prescribed'>xxxxx</value>
-    </values>
-  </entry>
-
-  <entry id="f_dpnd_dlidn">
-    <type>char</type>
-    <category>history</category>
-    <group>icefields_pond_nml</group>
-    <desc>
-    </desc>
-    <values>
-      <value>xxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
