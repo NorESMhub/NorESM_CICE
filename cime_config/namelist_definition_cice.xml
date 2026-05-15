@@ -756,7 +756,8 @@
       number of floe size distribution categories
     </desc>
     <values>
-      <value>1</value>
+      <value>12</value>
+      <value wav_comp='swav'>1</value>
     </values>
   </entry>
 
@@ -1306,7 +1307,8 @@
       Floe size distribution
     </desc>
     <values>
-      <value>.false.</value>
+      <value>.true.</value>
+      <value wav_comp='swav'>.false.</value>
     </values>
   </entry>
 
@@ -2765,7 +2767,8 @@
     </desc>
     <valid_values>none,profile,constant,random,alt</valid_values>
     <values>
-      <value>none</value>
+      <value>alt</value>
+      <value wav_comp='swav'>none</value>
     </values>
   </entry>
 
@@ -2790,6 +2793,7 @@
     </desc>
     <values>
       <value>25</value>
+      <value wav_comp='swav'>0</value>
     </values>
   </entry>
 
