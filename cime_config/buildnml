@@ -50,6 +50,7 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
     config = {}
 
     config['ocn_comp'] = case.get_value("COMP_OCN")
+    config['wav_comp'] = case.get_value("COMP_WAV")
 
     cice_mode = case.get_value("CICE_MODE")
     hgrid = case.get_value('ICE_GRID')
@@ -221,6 +222,13 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
         run_tod     = case.get_value("RUN_REFTOD")
         ice_ic = "%s.cice%s.r.%s-%s.nc" %(run_refcase, inst_string, run_refdate, run_tod)
         nmlgen.add_default("ice_ic", value=ice_ic, ignore_abs_path=True)
+        nmlgen.set_value('restart_aero', value=".true.")
+        nmlgen.set_value('restart_age', value=".true.")
+        nmlgen.set_value('restart_fsd', value=".true.")
+        nmlgen.set_value('restart_fy', value=".true.")
+        nmlgen.set_value('restart_lvl', value=".true.")
+        nmlgen.set_value('restart_pond_sealvl', value=".true.")
+        nmlgen.set_value('restart_snow', value=".true.")
     else:
         nmlgen.add_default("ice_ic")
         if nmlgen.get_value('ice_ic') == 'UNSET':
@@ -250,8 +258,19 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
     if drv_ptr:
         cice_ptr = drv_ptr.replace("cpl","ice")
         cice_ptr = cice_ptr.replace("_0001", inst_string)
-        if os.path.exists(os.path.join(rundir, cice_ptr)):
-            nmlgen.set_value('pointer_file', cice_ptr)
+    else:
+        # find the most recent file matching pattern
+        cice_ptr = None
+        pattern = "rpointer.ice*"
+        os.chdir(rundir)
+        files = glob.glob(pattern)
+        files.sort(key=lambda x: os.path.getmtime(os.path.join(rundir,x)))
+        os.chdir(case.get_case_root())
+        if files:
+            cice_ptr = files[-1]
+
+    if cice_ptr and os.path.exists(os.path.join(rundir, cice_ptr)):
+        nmlgen.set_value('pointer_file', cice_ptr)
 
     #----------------------------------------------------
     # Write out namelist groups
