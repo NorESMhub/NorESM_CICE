@@ -1503,7 +1503,7 @@
       Floe diameter used in lateral melting
     </desc>
     <values>
-      <value>300.0</value> 
+      <value>50.0</value>
     </values>
   </entry>
 
@@ -1515,7 +1515,7 @@
       Heat conductivity of snow on ice
     </desc>
     <values>
-      <value>0.30</value> 
+      <value>0.25</value>
     </values>
   </entry>
 
@@ -2283,7 +2283,7 @@
       Falling snow grains
     </desc>
     <values>
-      <value> 100.0 </value>
+      <value> 200.0 </value>
     </values>
   </entry>
 
@@ -2296,7 +2296,7 @@
       Scaling of minimum dry snow growth rate (unitless)
     </desc>
     <values>
-      <value> 0.0 </value>
+      <value> 1.5 </value>
     </values>
   </entry>
 
@@ -4619,7 +4619,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mxxxx</value>
       <value hgrid="ar9v4">mdhxx</value>
       <value cice_mode='prescribed'>xxxxx</value  >
     </values>
@@ -6567,7 +6567,7 @@
     <desc>
     </desc>
     <values>
-      <value>xxxxx</value>
+      <value>mxxxx</value>
       <value cice_mode='prescribed'>xxxxx</value>
     </values>
   </entry>
