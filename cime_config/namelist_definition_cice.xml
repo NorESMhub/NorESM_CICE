@@ -3193,6 +3193,28 @@
     </values>
   </entry>
 
+  <entry id="stream_taxmode" modify_via_xml="SSTICE_TAXMODE">
+    <type>char</type>
+    <category>streams</category>
+    <group>ice_prescribed_nml</group>
+    <desc>Time axis mode for the prescribed sst/ice_cov</desc>
+    <values>
+      <value>''</value>
+      <value cice_mode="prescribed">$SSTICE_TAXMODE</value>
+    </values>
+  </entry>
+
+  <entry id="stream_dtlimit" modify_via_xml="SSTICE_DTLIMIT">
+    <type>real</type>
+    <category>streams</category>
+    <group>ice_prescribed_nml</group>
+    <desc>Maximum allowed ratio of the model time step to the data time step</desc>
+    <values>
+      <value>-999.</value>
+      <value cice_mode="prescribed">$SSTICE_DTLIMIT</value>
+    </values>
+  </entry>
+
   <!-- =========================== -->
   <!-- icefields_nml -->
   <!-- =========================== -->
