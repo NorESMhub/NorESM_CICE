@@ -29,6 +29,47 @@ logger = logging.getLogger(__name__)
 
 # pylint: disable=too-many-arguments,too-many-locals,too-many-branches,too-many-statements
 ####################################################################################
+def _check_hist_file_period(nmlgen):
+    """Return a message for every hist_file_period that cannot be meant.
+
+    An empty list means every setting is acceptable.  The caller turns a
+    non-empty list into an error.
+
+    hist_file_period, histfreq and histfreq_n are per stream and in the same
+    order, so the only mistake worth catching here is a period set on a stream
+    that histfreq has switched off, which means the entries do not line up.
+    """
+
+    problems = []
+
+    period = nmlgen.get_value("hist_file_period")
+    if period is None:
+        return problems
+    if not isinstance(period, list):
+        period = [period]
+    period = [str(p).strip().strip("'\"").lower() for p in period]
+    if not any(p in ("month", "year") for p in period):
+        return problems
+
+    histfreq = nmlgen.get_value("histfreq")
+    if not isinstance(histfreq, list):
+        histfreq = [histfreq]
+
+    for ns, (freq, per) in enumerate(zip(histfreq, period), start=1):
+        if per not in ("month", "year"):
+            continue
+        freq = str(freq).strip().strip("'\"").lower()
+        if freq == "x":
+            problems.append(
+                "hist_file_period(%d) = '%s' but history stream %d is switched "
+                "off in histfreq. Check that the hist_file_period entries line "
+                "up with the histfreq entries."
+                % (ns, per, ns)
+            )
+
+    return problems
+
+
 def _create_namelists(case, confdir, infile, nmlgen, inst_string):
 ####################################################################################
 
@@ -195,6 +236,22 @@ def _create_namelists(case, confdir, infile, nmlgen, inst_string):
         nmlgen.set_value('tr_aero', value=".false.")
     # if nmlgen.get_value('n_iso') > '0':
     #     nmlgen.set_value('tr_iso', value=".true.")
+
+    #----------------------------------------------------
+    # hist_file_period entries must line up with histfreq
+    #----------------------------------------------------
+    # The try guards only the calculation: an unexpected namelist value leaves
+    # the check silent rather than failing case setup for the wrong reason.  A
+    # setting that is genuinely wrong is an error, raised below so that it is
+    # not swallowed here.
+    try:
+        period_problems = _check_hist_file_period(nmlgen)
+    except Exception as e:                       # pylint: disable=broad-except
+        logger.debug("cice: hist_file_period check skipped: %s" % e)
+        period_problems = []
+
+    if period_problems:
+        expect(False, "cice: " + "\n       ".join(period_problems))
 
     if nmlgen.get_value('gridcpl_file') == 'UNSET':
         nmlgen.set_value('gridcpl_file', value="unknown_gridcpl_file")
