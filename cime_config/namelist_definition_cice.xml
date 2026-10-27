@@ -150,16 +150,13 @@
         case.cice.h1.1850-01-01.nc    holds all 31 days of January
         case.cice.h1.1850-02-01.nc    holds all 28 days of February
 
-      'year' does the same thing a year at a time.  The output itself is
-      identical in every case: the same fields with the same values, written
-      just as often.  Only the number of files changes.
+      The output itself is identical in every case: the same fields
+      with the same values, written just as often.  Only the number of
+      files changes.
 
       How often output is written is set by histfreq, not here.
-
-      For a high frequency stream, choose 'month' rather than 'year' to keep
-      the files to a reasonable size.
     </desc>
-    <valid_values>none,month,year</valid_values>
+    <valid_values>none,month</valid_values>
     <values>
       <value>none,none,none,none,none</value>
     </values>
