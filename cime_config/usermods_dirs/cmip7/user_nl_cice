@@ -3,6 +3,7 @@
 !   namelist_var = new_namelist_value 
 ! Note - that it does not matter what namelist group the namelist_var belongs to
 !----------------------------------------------------------------------------------
+    hist_file_period   = "none", "month", "none", "none", "none"
     histfreq           = 'm','d','n','x','x'
     histfreq_n         =  1,1,15,1,1
     hist_avg           = .true.,.true.,.false.,.false,.false.
