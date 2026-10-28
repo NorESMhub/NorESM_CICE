@@ -131,6 +131,37 @@
     </values>
   </entry>
 
+  <entry id="hist_file_period">
+    <type>char(5)</type>
+    <category>setup</category>
+    <group>setup_nml</group>
+    <desc>
+      How much output to put in one history file.  One entry per stream, in the
+      same order as histfreq.
+
+      For a stream writing daily output, with the default 'none':
+
+        case.cice.h1.1850-01-01.nc    holds 1 day
+        case.cice.h1.1850-01-02.nc    holds 1 day
+        ... 31 files for January
+
+      and with 'month':
+
+        case.cice.h1.1850-01-01.nc    holds all 31 days of January
+        case.cice.h1.1850-02-01.nc    holds all 28 days of February
+
+      The output itself is identical in every case: the same fields
+      with the same values, written just as often.  Only the number of
+      files changes.
+
+      How often output is written is set by histfreq, not here.
+    </desc>
+    <valid_values>none,month</valid_values>
+    <values>
+      <value>none,none,none,none,none</value>
+    </values>
+  </entry>
+
   <entry id="history_file">
     <type>char</type>
     <category>setup</category>
