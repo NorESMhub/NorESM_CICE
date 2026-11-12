@@ -91,7 +91,7 @@
     f_sistryubot       = 'm'
     f_siflfwbot        = 'm'
     f_siflfwdrain      = 'm'
-    f_sivol            = 'm'
+    f_sivol            = 'md'
     f_icepresent       = 'x'
     f_hi               = 'x'
     f_hs               = 'x'
